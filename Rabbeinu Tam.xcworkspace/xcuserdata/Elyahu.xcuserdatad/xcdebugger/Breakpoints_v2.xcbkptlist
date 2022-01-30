@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2989477B-95AD-47A6-835E-3F6E49A259AE"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61A25229-08FD-4D16-BF70-21783D7CA663"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rabbeinu Tam/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "61A25229-08FD-4D16-BF70-21783D7CA663 - e2e609c023ae275"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.CLLocation) -&gt; () in Rabbeinu_Tam.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Rabbeinu Tam"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Rabbeinu%20Tam/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "158">
+               </Location>
+               <Location
+                  uuid = "61A25229-08FD-4D16-BF70-21783D7CA663 - 18cf1afae842b2aa"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (__C.CLLocation) -&gt; () in Rabbeinu_Tam.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Rabbeinu Tam"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Rabbeinu%20Tam/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

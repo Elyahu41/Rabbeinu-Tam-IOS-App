@@ -1,0 +1,16 @@
+PODS:
+  - KosherCocoa (3.6.0)
+
+DEPENDENCIES:
+  - KosherCocoa (~> 3.6.0)
+
+SPEC REPOS:
+  trunk:
+    - KosherCocoa
+
+SPEC CHECKSUMS:
+  KosherCocoa: 1085514386624c780bcad1b9c7c81135e36d1b55
+
+PODFILE CHECKSUM: 6590e273803daa4bdac4d9233f010773d40f3bee
+
+COCOAPODS: 1.10.1
