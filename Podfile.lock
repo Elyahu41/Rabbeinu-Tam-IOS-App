@@ -1,16 +1,20 @@
 PODS:
   - KosherCocoa (3.6.0)
+  - SwiftSoup (2.3.8)
 
 DEPENDENCIES:
   - KosherCocoa (~> 3.6.0)
+  - SwiftSoup
 
 SPEC REPOS:
   trunk:
     - KosherCocoa
+    - SwiftSoup
 
 SPEC CHECKSUMS:
   KosherCocoa: 1085514386624c780bcad1b9c7c81135e36d1b55
+  SwiftSoup: ba8ea2c91151881a298cba4b0628ef31e835a77f
 
-PODFILE CHECKSUM: 6590e273803daa4bdac4d9233f010773d40f3bee
+PODFILE CHECKSUM: ba3ecad8d4ecf8a3ca88773c4ad46d872f84800f
 
 COCOAPODS: 1.10.1

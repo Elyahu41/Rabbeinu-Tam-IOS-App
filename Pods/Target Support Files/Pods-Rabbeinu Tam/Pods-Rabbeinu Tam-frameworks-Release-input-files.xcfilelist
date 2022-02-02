@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/KosherCocoa/KosherCocoa.framework
+${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework

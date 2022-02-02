@@ -7,4 +7,5 @@ target 'Rabbeinu Tam' do
 
   # Pods for Rabbeinu Tam
   pod 'KosherCocoa', '~> 3.6.0'
+  pod 'SwiftSoup'
 end
