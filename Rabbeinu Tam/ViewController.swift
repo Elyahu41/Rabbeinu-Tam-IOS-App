@@ -61,7 +61,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         LocationManager.shared.getUserLocation {
             location in DispatchQueue.main.async {
                 self.lat = location.coordinate.latitude
