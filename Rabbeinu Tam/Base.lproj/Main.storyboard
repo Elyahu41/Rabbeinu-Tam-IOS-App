@@ -46,7 +46,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="z5c-fW-QqC"/>
                                 </connections>
                             </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Opinion:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="fhV-iS-H7C">
+                            <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Opinion:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="fhV-iS-H7C">
                                 <rect key="frame" x="100" y="252" width="216" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -55,8 +55,8 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="gck-5a-bX4"/>
                                 </connections>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TPA-OI-Ujg">
-                                <rect key="frame" x="0.0" y="406" width="0.0" height="0.0"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TPA-OI-Ujg">
+                                <rect key="frame" x="207" y="368" width="0.0" height="0.0"/>
                                 <subviews>
                                     <datePicker hidden="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="S1x-vw-nwW">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
@@ -152,12 +152,13 @@
                             <constraint firstItem="KcA-Sb-AxL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="80O-Sb-jHf"/>
                             <constraint firstItem="fhV-iS-H7C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9KK-zN-Zob"/>
                             <constraint firstItem="w29-gb-D4f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gdd-fa-qWF"/>
+                            <constraint firstItem="TPA-OI-Ujg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LNJ-gp-lrp"/>
                             <constraint firstItem="KcA-Sb-AxL" firstAttribute="top" secondItem="tvR-Oj-nlk" secondAttribute="bottom" constant="1" id="M6V-ID-p2v"/>
-                            <constraint firstItem="mX6-uz-NWd" firstAttribute="top" secondItem="fhV-iS-H7C" secondAttribute="bottom" id="NVc-y4-xlu"/>
                             <constraint firstItem="DX3-GI-Wk3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4f-tO-TPb"/>
                             <constraint firstItem="w29-gb-D4f" firstAttribute="top" secondItem="YRX-pb-FF0" secondAttribute="bottom" constant="1" id="T6H-K9-lGM"/>
                             <constraint firstItem="yaw-4Q-83a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TRf-Ot-RM9"/>
                             <constraint firstItem="fhV-iS-H7C" firstAttribute="top" secondItem="yaw-4Q-83a" secondAttribute="bottom" constant="1" id="bOB-dT-YH1"/>
+                            <constraint firstItem="TPA-OI-Ujg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dQS-Wm-b8y"/>
                             <constraint firstItem="YRX-pb-FF0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3T-WQ-eX5"/>
                             <constraint firstItem="mX6-uz-NWd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jUl-oi-HFg"/>
                             <constraint firstItem="tvR-Oj-nlk" firstAttribute="top" secondItem="DX3-GI-Wk3" secondAttribute="bottom" constant="3" id="pqV-af-DAA"/>
