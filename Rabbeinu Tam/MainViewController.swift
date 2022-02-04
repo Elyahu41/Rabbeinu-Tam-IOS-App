@@ -89,7 +89,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                     self.date.isHidden = false
                     zmanShown = true
                 }
-                
                 //let yesterday: Date = calendar.internalCalendar().date(byAdding: .day, value: -1, to: calendar.workingDate)!
                 //calendar.workingDate = yesterday
 

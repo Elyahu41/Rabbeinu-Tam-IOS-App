@@ -15,12 +15,101 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Rabbeinu_Tam" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="time" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YRX-pb-FF0">
+                                <rect key="frame" x="16" y="406" width="382" height="66"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s8-zU-mZI">
+                                <rect key="frame" x="0.0" y="76" width="414" height="19"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="barTintColor" name="AccentColor"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Rabbeinu Tam" id="TX0-9Q-pOA"/>
+                                </items>
+                            </navigationBar>
+                            <pickerView hidden="YES" opaque="NO" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="mX6-uz-NWd">
+                                <rect key="frame" x="31" y="311" width="353" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eXU-Yy-eqO"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="z5c-fW-QqC"/>
+                                </connections>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Opinion:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="fhV-iS-H7C">
+                                <rect key="frame" x="100" y="252" width="216" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gck-5a-bX4"/>
+                                </connections>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TPA-OI-Ujg">
+                                <rect key="frame" x="0.0" y="406" width="0.0" height="0.0"/>
+                                <subviews>
+                                    <datePicker hidden="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="S1x-vw-nwW">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
+                                        <connections>
+                                            <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="K8W-Zv-Lp5"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="date" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w29-gb-D4f">
+                                <rect key="frame" x="24" y="466" width="367" height="57"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DX3-GI-Wk3">
+                                <rect key="frame" x="111" y="535" width="193" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Change Date"/>
+                                <connections>
+                                    <action selector="changeDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFF-Od-Lfz"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tvR-Oj-nlk">
+                                <rect key="frame" x="122.00000000000001" y="573" width="170.33333333333337" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round up?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehy-KZ-nXW">
+                                        <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="RoundUp Switch" translatesAutoresizingMaskIntoConstraints="NO" id="zPj-Zg-b7J">
+                                        <rect key="frame" x="121.33333333333334" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="roundUpSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="PmI-zV-YM1"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" text="LocationName" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yaw-4Q-83a">
+                                <rect key="frame" x="132" y="213" width="150" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                             <stackView opaque="NO" contentMode="center" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="KcA-Sb-AxL">
-                                <rect key="frame" x="61.666666666666657" y="624.66666666666663" width="290.66666666666674" height="31.333333333333371"/>
+                                <rect key="frame" x="61.666666666666657" y="605" width="290.66666666666674" height="31.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cK-ff-25n">
                                         <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="31.333333333333332"/>
@@ -35,7 +124,7 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-s7-jnK">
-                                        <rect key="frame" x="174.66666666666669" y="5.6666666666667425" width="77" height="20.333333333333332"/>
+                                        <rect key="frame" x="174.66666666666669" y="5.6666666666666288" width="77" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -55,121 +144,25 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRX-pb-FF0">
-                                <rect key="frame" x="45" y="391.66666666666669" width="323" height="51.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s8-zU-mZI">
-                                <rect key="frame" x="0.0" y="32" width="414" height="44"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <color key="barTintColor" name="AccentColor"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Rabbeinu Tam" id="TX0-9Q-pOA"/>
-                                </items>
-                            </navigationBar>
-                            <pickerView hidden="YES" opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="mX6-uz-NWd">
-                                <rect key="frame" x="47" y="151.66666666666663" width="320" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="eXU-Yy-eqO"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="z5c-fW-QqC"/>
-                                </connections>
-                            </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Opinion:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fhV-iS-H7C">
-                                <rect key="frame" x="123.66666666666669" y="116.66666666666669" width="167" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gck-5a-bX4"/>
-                                </connections>
-                            </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w29-gb-D4f">
-                                <rect key="frame" x="44" y="444" width="323" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocationName" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaw-4Q-83a">
-                                <rect key="frame" x="149" y="94" width="116" height="21.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TPA-OI-Ujg">
-                                <rect key="frame" x="207" y="368" width="0.0" height="0.0"/>
-                                <subviews>
-                                    <datePicker hidden="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="S1x-vw-nwW">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
-                                        <connections>
-                                            <action selector="dateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="K8W-Zv-Lp5"/>
-                                        </connections>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="tvR-Oj-nlk">
-                                <rect key="frame" x="122.00000000000001" y="588.66666666666663" width="170.33333333333337" height="31"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round up?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehy-KZ-nXW">
-                                        <rect key="frame" x="0.0" y="0.0" width="120.33333333333333" height="31"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="RoundUp Switch" translatesAutoresizingMaskIntoConstraints="NO" id="zPj-Zg-b7J">
-                                        <rect key="frame" x="121.33333333333334" y="0.0" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="roundUpSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="PmI-zV-YM1"/>
-                                        </connections>
-                                    </switch>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX3-GI-Wk3">
-                                <rect key="frame" x="136" y="541.66666666666663" width="142" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Change Date"/>
-                                <connections>
-                                    <action selector="changeDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFF-Od-Lfz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YRX-pb-FF0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="68m-fh-QCw"/>
+                            <constraint firstItem="tvR-Oj-nlk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11a-j7-NXW"/>
+                            <constraint firstItem="KcA-Sb-AxL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="80O-Sb-jHf"/>
                             <constraint firstItem="fhV-iS-H7C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9KK-zN-Zob"/>
-                            <constraint firstItem="8s8-zU-mZI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AOr-XD-MJ9"/>
-                            <constraint firstItem="YRX-pb-FF0" firstAttribute="top" secondItem="mX6-uz-NWd" secondAttribute="bottom" constant="24" id="D1w-8k-Frn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KcA-Sb-AxL" secondAttribute="bottom" constant="80" id="HaF-TF-ghx"/>
-                            <constraint firstItem="tvR-Oj-nlk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iu9-7H-B1J"/>
-                            <constraint firstItem="8s8-zU-mZI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NBG-Sx-IcJ"/>
+                            <constraint firstItem="w29-gb-D4f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gdd-fa-qWF"/>
+                            <constraint firstItem="KcA-Sb-AxL" firstAttribute="top" secondItem="tvR-Oj-nlk" secondAttribute="bottom" constant="1" id="M6V-ID-p2v"/>
                             <constraint firstItem="mX6-uz-NWd" firstAttribute="top" secondItem="fhV-iS-H7C" secondAttribute="bottom" id="NVc-y4-xlu"/>
-                            <constraint firstItem="TPA-OI-Ujg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="O8U-Tn-cip"/>
-                            <constraint firstItem="KcA-Sb-AxL" firstAttribute="top" secondItem="tvR-Oj-nlk" secondAttribute="bottom" constant="5" id="Oi1-Qg-Tem"/>
                             <constraint firstItem="DX3-GI-Wk3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4f-tO-TPb"/>
+                            <constraint firstItem="w29-gb-D4f" firstAttribute="top" secondItem="YRX-pb-FF0" secondAttribute="bottom" constant="1" id="T6H-K9-lGM"/>
                             <constraint firstItem="yaw-4Q-83a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TRf-Ot-RM9"/>
-                            <constraint firstItem="KcA-Sb-AxL" firstAttribute="top" secondItem="tvR-Oj-nlk" secondAttribute="bottom" constant="5" id="VAL-id-oqB"/>
                             <constraint firstItem="fhV-iS-H7C" firstAttribute="top" secondItem="yaw-4Q-83a" secondAttribute="bottom" constant="1" id="bOB-dT-YH1"/>
-                            <constraint firstItem="KcA-Sb-AxL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eae-38-TRm"/>
-                            <constraint firstItem="w29-gb-D4f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="gUo-S2-SkR"/>
-                            <constraint firstItem="8s8-zU-mZI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="gWS-fu-8JF"/>
+                            <constraint firstItem="YRX-pb-FF0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3T-WQ-eX5"/>
                             <constraint firstItem="mX6-uz-NWd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jUl-oi-HFg"/>
-                            <constraint firstItem="KcA-Sb-AxL" firstAttribute="top" secondItem="tvR-Oj-nlk" secondAttribute="bottom" constant="5" id="lPr-i9-Uu0"/>
-                            <constraint firstItem="w29-gb-D4f" firstAttribute="top" secondItem="YRX-pb-FF0" secondAttribute="bottom" constant="1" id="mB8-Jd-4Bd"/>
-                            <constraint firstItem="tvR-Oj-nlk" firstAttribute="top" secondItem="DX3-GI-Wk3" secondAttribute="bottom" constant="5" id="olb-0w-gvr"/>
-                            <constraint firstItem="yaw-4Q-83a" firstAttribute="top" secondItem="8s8-zU-mZI" secondAttribute="bottom" constant="18" id="ovL-q3-qCJ"/>
-                            <constraint firstItem="TPA-OI-Ujg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pqT-dW-4bH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YRX-pb-FF0" secondAttribute="trailing" constant="46" id="thU-ex-mPX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w29-gb-D4f" secondAttribute="trailing" constant="47" id="xLJ-WM-gfS"/>
+                            <constraint firstItem="tvR-Oj-nlk" firstAttribute="top" secondItem="DX3-GI-Wk3" secondAttribute="bottom" constant="3" id="pqV-af-DAA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="OYw-TF-SGJ"/>
                     <connections>
                         <outlet property="changeDateButton" destination="DX3-GI-Wk3" id="s7X-nE-6VE"/>
                         <outlet property="currentElevationLabel" destination="FD6-s7-jnK" id="O13-OT-DfF"/>
@@ -186,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="69.642857142857139"/>
+            <point key="canvasLocation" x="135" y="67.5"/>
         </scene>
         <!--Elevation View Controller-->
         <scene sceneID="r8C-H4-g5Y">
