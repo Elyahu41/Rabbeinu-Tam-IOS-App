@@ -7,20 +7,26 @@
 
 import UIKit
 import KosherCocoa
+import CoreLocation
 
 class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     var lat: Double = 0
     var long: Double = 0
     var elevation: Double = 0.0
+    var timezone: TimeZone = TimeZone.current
     var currentZman: Int = 0
     var zmanShown: Bool = false
     var zmanimCalendar: ComplexZmanimCalendar = ComplexZmanimCalendar()
     let defaults = UserDefaults.standard
     
+    @IBAction func enterZipcode(_ sender: Any) {
+        showZipcodeAlert()
+    }
     @IBAction func setupElevetion(_ sender: Any) {
         self.performSegue(withIdentifier: "elevationSegue", sender: self)
     }
+    @IBOutlet weak var sunset: UILabel!
     @IBOutlet weak var selectOpinion: UITextField!
     @IBOutlet weak var opinions: UIPickerView!
     @IBOutlet weak var time: UILabel!
@@ -34,6 +40,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                 }
         defaults.set(sender.isOn, forKey: "useElevation")
         showZman(row: currentZman)
+        setSunsetTime()
     }
     @IBAction func roundUpSwitch(_ sender: UISwitch) {
         if sender.isOn {
@@ -43,6 +50,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                 }
         defaults.set(sender.isOn, forKey: "roundUp")
         showZman(row: currentZman)
+        setSunsetTime()
     }
     @IBOutlet weak var roundUpSwitch: UISwitch!
     @IBOutlet weak var elevationSwitch: UISwitch!
@@ -51,6 +59,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func dateChanged(_ sender: Any) {//picker date selected
         zmanimCalendar.workingDate = datePicker.date
         showZman(row: currentZman)
+        setSunsetTime()
     }
     @IBOutlet weak var changeDateButton: UIButton!
     @IBAction func changeDate(_ sender: Any) {
@@ -75,33 +84,6 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LocationManager.shared.getUserLocation {
-            location in DispatchQueue.main.async { [self] in
-                self.lat = location.coordinate.latitude
-                self.long = location.coordinate.longitude
-                self.elevation = self.defaults.double(forKey: "elevation")
-                self.recreateZmanimCalendar()
-                self.showZman(row: self.defaults.integer(forKey: "currentZman"))
-                if self.defaults.bool(forKey: "zmanWasPicked") {
-                    self.selectOpinion.text = self.list[self.defaults.integer(forKey: "currentZman")]
-                    self.showZman(row: self.defaults.integer(forKey: "currentZman"))
-                    self.time.isHidden = false
-                    self.date.isHidden = false
-                    zmanShown = true
-                }
-                //let yesterday: Date = calendar.internalCalendar().date(byAdding: .day, value: -1, to: calendar.workingDate)!
-                //calendar.workingDate = yesterday
-
-                //let formatter = DateFormatter()
-                //formatter.dateFormat = "HH:mm:ss E, d MMM y"
-                LocationManager.shared.resolveLocationName(with: location) { locationName in
-                    self.locationNLabel.text = locationName!
-                }
-            }
-        }
-        if lat == 0 && long == 0 {
-            self.locationNLabel.text = "Error: No location info"
-        }
         elevationSwitch.isOn = defaults.bool(forKey: "useElevation")
         roundUpSwitch.isOn = defaults.bool(forKey: "roundUp")
         GlobalStruct.useElevation = elevationSwitch.isOn
@@ -114,6 +96,113 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: NSNotification.Name("text"), object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        locationNLabel.text = defaults.string(forKey: "locationName") ?? "Greenwich, England"
+        if !defaults.bool(forKey: "hasRunBefore") {
+            showZipcodeAlert()
+        } else {
+            if defaults.bool(forKey: "useZipcode") {
+                lat = defaults.double(forKey: "lat")
+                long = defaults.double(forKey: "long")
+                timezone = TimeZone.init(identifier: defaults.string(forKey: "timezone")!)!
+                recreateZmanimCalendar()
+                showZman(row: defaults.integer(forKey: "currentZman"))
+                if defaults.bool(forKey: "zmanWasPicked") {
+                    selectOpinion.text = list[defaults.integer(forKey: "currentZman")]
+                    showZman(row: defaults.integer(forKey: "currentZman"))
+                    time.isHidden = false
+                    date.isHidden = false
+                    zmanShown = true
+                }
+                setSunsetTime()
+            } else {
+                getUserLocation()
+            }
+        }
+    }
+    
+    func getUserLocation() {
+        LocationManager.shared.getUserLocation {
+            location in DispatchQueue.main.async { [self] in
+                self.lat = location.coordinate.latitude
+                self.long = location.coordinate.longitude
+                self.timezone = TimeZone.current
+                self.recreateZmanimCalendar()
+                setSunsetTime()
+                self.showZman(row: self.defaults.integer(forKey: "currentZman"))
+                if self.defaults.bool(forKey: "zmanWasPicked") {
+                    self.selectOpinion.text = self.list[self.defaults.integer(forKey: "currentZman")]
+                    self.showZman(row: self.defaults.integer(forKey: "currentZman"))
+                    self.time.isHidden = false
+                    self.date.isHidden = false
+                    self.zmanShown = true
+                }
+                self.defaults.set(true, forKey: "hasRunBefore")
+                self.defaults.set(false, forKey: "useZipcode")
+                self.defaults.set(timezone.identifier, forKey: "timezone")
+                //let yesterday: Date = calendar.internalCalendar().date(byAdding: .day, value: -1, to: calendar.workingDate)!
+                //calendar.workingDate = yesterday
+
+                //let formatter = DateFormatter()
+                //formatter.dateFormat = "HH:mm:ss E, d MMM y"
+                LocationManager.shared.resolveLocationName(with: location) { locationName in
+                    self.locationNLabel.text = locationName!
+                }
+            }
+        }
+    }
+    
+    func showZipcodeAlert() {
+        let alert = UIAlertController(title: "Location or Zipcode?", message: "If you do not want the app to know your location, you can enter a zipcode below. Otherwise, it is recommended to use your devices location as this provides more accurate results.", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Zipcode"
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+            print(textField!.text!)
+            let geoCoder = CLGeocoder()
+            geoCoder.geocodeAddressString((textField?.text)!, completionHandler: { i, j in
+                var name = ""
+                if let locality = i?.first?.locality {
+                    name += locality
+                }
+                if let adminRegion = i?.first?.administrativeArea {
+                    name += ", \(adminRegion)"
+                }
+                if name.isEmpty {
+                    name = "No location name info"
+                }
+                self.locationNLabel.text = name
+                let coordinates = i?.first?.location?.coordinate
+                self.lat = coordinates?.latitude ?? 0
+                self.long = coordinates?.longitude ?? 0
+                self.timezone = (i?.first?.timeZone)!
+                self.recreateZmanimCalendar()
+                self.setSunsetTime()
+                if self.defaults.bool(forKey: "zmanWasPicked") {
+                    self.selectOpinion.text = self.list[self.defaults.integer(forKey: "currentZman")]
+                    self.showZman(row: self.defaults.integer(forKey: "currentZman"))
+                    self.time.isHidden = false
+                    self.date.isHidden = false
+                    self.zmanShown = true
+                }
+                self.defaults.set(self.lat, forKey: "lat")
+                self.defaults.set(self.long, forKey: "long")
+                self.defaults.set(name, forKey: "locationName")
+                self.defaults.set(true, forKey: "hasRunBefore")
+                self.defaults.set(true, forKey: "useZipcode")
+                self.defaults.set(self.timezone.identifier, forKey: "timezone")
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { UIAlertAction in
+            alert.dismiss(animated: true) {}
+        }))
+        alert.addAction(UIAlertAction(title: "Use Location", style: .default, handler: { UIAlertAction in
+            self.getUserLocation()
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @objc func didGetNotification(_ notification: Notification) {
         let amount = notification.object as! String
         elevation = NumberFormatter().number(from: amount)!.doubleValue
@@ -121,11 +210,26 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         currentElevationLabel.text = "Current: " + amount
         recreateZmanimCalendar()
         showZman(row: currentZman)
+        setSunsetTime()
     }
     
     public func recreateZmanimCalendar() {
-        let geoLocation = KosherCocoa.GeoLocation.init(latitude: self.lat, andLongitude: self.long, elevation: self.elevation, andTimeZone: TimeZone.current)
+        let geoLocation = KosherCocoa.GeoLocation.init(latitude: self.lat, andLongitude: self.long, elevation: self.elevation, andTimeZone: timezone)
         zmanimCalendar = ComplexZmanimCalendar(location: geoLocation)
+    }
+    
+    func setSunsetTime() {
+        let timeFormatter = DateFormatter()
+        if GlobalStruct.roundUp {
+            timeFormatter.dateFormat = "h:mm aa"
+        } else {
+            timeFormatter.dateFormat = "h:mm:ss aa"
+        }
+        var zman = zmanimCalendar.sunset()
+        if GlobalStruct.roundUp {
+            zman = zman?.advanced(by: 60)
+        }
+        self.sunset.text = "Sunset: " + timeFormatter.string(from: zman!)
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -385,6 +489,13 @@ public extension ComplexZmanimCalendar {
             return sunset()?.addingTimeInterval(shaahZmanit*1.2);
         }
         return seaLevelSunset()?.addingTimeInterval(shaahZmanit*1.2);
+    }
+    
+    override func sunset() -> Date? {
+        if GlobalStruct.useElevation {
+            return super.sunset()
+        }
+        return seaLevelSunset()
     }
     
     override func shaahZmanisGra() -> Double {

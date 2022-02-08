@@ -27,7 +27,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8s8-zU-mZI">
-                                <rect key="frame" x="0.0" y="76" width="414" height="19"/>
+                                <rect key="frame" x="0.0" y="51" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <color key="barTintColor" name="AccentColor"/>
@@ -35,26 +35,24 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Rabbeinu Tam" id="TX0-9Q-pOA"/>
+                                    <navigationItem title="Rabbeinu Tam" id="TX0-9Q-pOA">
+                                        <barButtonItem key="rightBarButtonItem" title="Zipcode" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="50" changesSelectionAsPrimaryAction="YES" id="waE-WB-eq8">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="enterZipcode:" destination="BYZ-38-t0r" id="NBC-YV-f2f"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <pickerView hidden="YES" opaque="NO" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="mX6-uz-NWd">
-                                <rect key="frame" x="31" y="311" width="353" height="115"/>
+                                <rect key="frame" x="0.0" y="311" width="414" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="eXU-Yy-eqO"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="z5c-fW-QqC"/>
                                 </connections>
                             </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Opinion:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="fhV-iS-H7C">
-                                <rect key="frame" x="100" y="252" width="216" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gck-5a-bX4"/>
-                                </connections>
-                            </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TPA-OI-Ujg">
                                 <rect key="frame" x="207" y="368" width="0.0" height="0.0"/>
                                 <subviews>
@@ -66,7 +64,7 @@
                                     </datePicker>
                                 </subviews>
                             </stackView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="date" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w29-gb-D4f">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="date" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w29-gb-D4f">
                                 <rect key="frame" x="24" y="466" width="367" height="57"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
@@ -100,8 +98,8 @@
                                     </switch>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" text="LocationName" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yaw-4Q-83a">
-                                <rect key="frame" x="132" y="213" width="150" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="LocationName" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yaw-4Q-83a">
+                                <rect key="frame" x="31" y="213" width="353" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
@@ -144,11 +142,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXJ-4x-CHV">
+                                <rect key="frame" x="178.33333333333334" y="637.33333333333337" width="57.666666666666657" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Select Opinion:" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="fhV-iS-H7C">
+                                <rect key="frame" x="0.0" y="268" width="414" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gck-5a-bX4"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tvR-Oj-nlk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="11a-j7-NXW"/>
+                            <constraint firstItem="uXJ-4x-CHV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2au-dP-0Wt"/>
                             <constraint firstItem="KcA-Sb-AxL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="80O-Sb-jHf"/>
                             <constraint firstItem="fhV-iS-H7C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9KK-zN-Zob"/>
                             <constraint firstItem="w29-gb-D4f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gdd-fa-qWF"/>
@@ -157,7 +171,7 @@
                             <constraint firstItem="DX3-GI-Wk3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4f-tO-TPb"/>
                             <constraint firstItem="w29-gb-D4f" firstAttribute="top" secondItem="YRX-pb-FF0" secondAttribute="bottom" constant="1" id="T6H-K9-lGM"/>
                             <constraint firstItem="yaw-4Q-83a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TRf-Ot-RM9"/>
-                            <constraint firstItem="fhV-iS-H7C" firstAttribute="top" secondItem="yaw-4Q-83a" secondAttribute="bottom" constant="1" id="bOB-dT-YH1"/>
+                            <constraint firstItem="uXJ-4x-CHV" firstAttribute="top" secondItem="KcA-Sb-AxL" secondAttribute="bottom" constant="1" id="bKO-rg-FgN"/>
                             <constraint firstItem="TPA-OI-Ujg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dQS-Wm-b8y"/>
                             <constraint firstItem="YRX-pb-FF0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f3T-WQ-eX5"/>
                             <constraint firstItem="mX6-uz-NWd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jUl-oi-HFg"/>
@@ -174,13 +188,14 @@
                         <outlet property="opinions" destination="mX6-uz-NWd" id="vY3-Yz-9QO"/>
                         <outlet property="roundUpSwitch" destination="zPj-Zg-b7J" id="Blz-vT-cja"/>
                         <outlet property="selectOpinion" destination="fhV-iS-H7C" id="RfV-pP-QCV"/>
+                        <outlet property="sunset" destination="uXJ-4x-CHV" id="ciG-XX-RXL"/>
                         <outlet property="time" destination="YRX-pb-FF0" id="IMX-AD-aQD"/>
                         <segue destination="931-K3-aVp" kind="showDetail" identifier="elevationSegue" id="iLY-dV-dzf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="67.5"/>
+            <point key="canvasLocation" x="131.8840579710145" y="66.032608695652172"/>
         </scene>
         <!--Elevation View Controller-->
         <scene sceneID="r8C-H4-g5Y">
@@ -267,6 +282,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="128" height="92"/>
         <image name="wrench.fill" catalog="system" width="128" height="125"/>
         <namedColor name="AccentColor">
             <color red="0.12399999797344208" green="0.27399998903274536" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
