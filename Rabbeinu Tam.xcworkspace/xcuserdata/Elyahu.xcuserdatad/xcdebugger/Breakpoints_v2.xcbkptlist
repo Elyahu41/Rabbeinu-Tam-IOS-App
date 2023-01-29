@@ -55,54 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4D3B1618-000A-4FAA-91E2-18BD233477C9"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rabbeinu Tam/ElevationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "onReturn()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3ED9C6FD-4E96-438F-9F95-E303721DCF06"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rabbeinu Tam/ElevationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "onReturn()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B74508D2-AA3A-49A5-B393-F02BE51A2A88"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Rabbeinu Tam/ElevationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "webView(_:didCommit:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AB7D8FD9-DFF7-4D84-90CD-D3DCB205FFA4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -110,9 +62,504 @@
             filePath = "Rabbeinu Tam/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
             landmarkName = "didGetNotification(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4288CAC9-85E0-4122-984A-E38E1BCC94B3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rabbeinu Tam/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "recreateZmanimCalendar()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D423A683-0979-4533-99A0-2AF40D25A699"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../KosherSwift/KosherSwift/GeoLocation.swift"
+            startingColumnNumber = "17"
+            endingColumnNumber = "25"
+            startingLineNumber = "5"
+            endingLineNumber = "5"
+            landmarkName = "latitude"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BBB93C1C-A3C7-4A00-83D7-1679B2C4317A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rabbeinu Tam/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "setSunsetTime()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F5B3D14-FEA3-4148-B559-9A4317742AC5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/NOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "-initWithGeoLocation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8A98F3E-FFC2-4A2B-9FC5-F22D589EB1B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-getUTCSunrise:geoLocation:zenith:adjustForElevation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "920DF10A-63B6-41D7-B2FE-6BA4FB6AB355"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-getUTCSunrise:geoLocation:zenith:adjustForElevation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5A331175-B15D-49DC-A0C2-CD96B49F38C4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-getUTCSunrise:geoLocation:zenith:adjustForElevation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E483565E-D0B4-4872-ACA0-CF5D794CB50A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-getUTCSunrise:geoLocation:zenith:adjustForElevation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4A93A5B-1915-4A40-A611-17CC118D2278"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "-getSunriseUTC:latitude:longitude:zenith:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F4A93A5B-1915-4A40-A611-17CC118D2278 - 875bf758ae7d9a8f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSunHourAngleAtSunset:solarDec:zenith:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "F4A93A5B-1915-4A40-A611-17CC118D2278 - 3f081b5502f532d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSunriseUTC:latitude:longitude:zenith:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "66">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF318BCD-A7BE-431F-82CF-CDE2CDB0BC55"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "-getSolarNoonUTC:longitude:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EF318BCD-A7BE-431F-82CF-CDE2CDB0BC55 - d06296673890eb13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSolarNoonUTC:longitude:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "EF318BCD-A7BE-431F-82CF-CDE2CDB0BC55 - d06296673890eb13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSolarNoonUTC:longitude:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  uuid = "EF318BCD-A7BE-431F-82CF-CDE2CDB0BC55 - d06296673890eb13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSolarNoonUTC:longitude:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E8035E4-F7A7-498B-BB4E-0BC39FF99DD6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-getEquationOfTime:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AFAE9BE2-7D09-4A2F-8235-7326B0B484ED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-getJulianDay:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B43C7F0F-23F5-42D9-88F6-5D2F527B0A82"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "-getSunriseUTC:latitude:longitude:zenith:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B43C7F0F-23F5-42D9-88F6-5D2F527B0A82 - 3f081b5502f5323a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSunriseUTC:latitude:longitude:zenith:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "270"
+                  endingLineNumber = "270"
+                  offsetFromSymbolStart = "173">
+               </Location>
+               <Location
+                  uuid = "B43C7F0F-23F5-42D9-88F6-5D2F527B0A82 - 3f081b5502f533d9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSunriseUTC:latitude:longitude:zenith:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "273"
+                  endingLineNumber = "273"
+                  offsetFromSymbolStart = "173">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0EBFD7B-A019-486D-81D2-CBCB3BC0752C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "-getSunriseUTC:latitude:longitude:zenith:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95716805-F879-4930-98EE-B1481FDB5A2E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "-getSunriseUTC:latitude:longitude:zenith:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F69E5F51-74A0-4282-9446-553C40DAD6AA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "-getSunriseUTC:latitude:longitude:zenith:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3C518EFD-F422-4FEE-87DF-6E7AAC623493"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-getUTCSunset:geoLocation:zenith:adjustForElevation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "670BD6A4-DB61-4E12-8006-FE36A2D65836"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "-getSunsetUTC:latitude:longitude:zenith:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "670BD6A4-DB61-4E12-8006-FE36A2D65836 - a5608bb8079e019e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSunsetUTC:latitude:longitude:zenith:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "670BD6A4-DB61-4E12-8006-FE36A2D65836 - a5608bb8079e019e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[KCNOAACalculator getSunsetUTC:latitude:longitude:zenith:]"
+                  moduleName = "KosherCocoa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Elyahu/Desktop/Rabbeinu%20Tam/Rabbeinu%20Tam/Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "330"
+                  endingLineNumber = "330"
+                  offsetFromSymbolStart = "644">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C67AE897-677E-4554-9325-9D724C66BCD1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
+            landmarkName = "-UTCSunsetForDate:andZenith:adjustForElevation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89E63AEC-41D6-4902-9AFA-A181B5974E39"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/KosherCocoa/KosherCocoa/Library/Core/Solar/KCNOAACalculator.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-getUTCSunset:geoLocation:zenith:adjustForElevation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4345EBCC-C8E3-43F4-89D4-4121917E6C07"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rabbeinu Tam/LSGeoLookup.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "findNearbyToponymsForLatitude(latitude:longitude:maxRows:radius:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEFB412F-3AD8-4ECA-8933-72C1CF20F57F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Rabbeinu Tam/LSGeoLookup.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "findElevationGtopo30(latitude:longitude:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

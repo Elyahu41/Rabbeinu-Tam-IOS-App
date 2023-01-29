@@ -6,25 +6,65 @@
 //
 
 import UIKit
-import WebKit
-import SwiftSoup
 
-class ElevationViewController: UIViewController, WKNavigationDelegate {
+class ElevationViewController: UIViewController {
     
     let _acceptableCharacters = "0123456789."
     
-    @IBOutlet weak var webView: WKWebView!
     @IBAction func getFromOnline(_ sender: Any) {
-        webView.isHidden = false
-        webView.load(URLRequest(url: URL(string: "https://bit.ly/3rhS55b")! as URL) as URLRequest)
-        webView.navigationDelegate = self
-        let alert = UIAlertController(title: "How to get info from chaitables.com", message: "(I recommend you visit the website first.) \n\n Choose your area and on the next page all you need to do is to fill out steps 1 and 2, and click the button on the bottom of the page to calculate the tables. \n\n Just make sure your search radius is big enough and the app will do the rest.", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK!", style: .default) { (UIAlertAction) -> Void in
+        var intArray: [Int] = []
+        var e1:Int = 0
+        var e2:Int = 0
+        var e3:Int = 0
+        let group = DispatchGroup()
+        group.enter()
+        let geocoder = LSGeoLookup(withUserID: "Elyahu41")
+        geocoder.findElevationGtopo30(latitude: SharedData.shared.lat, longitude: SharedData.shared.long) {
+            elevation in
+            if let elevation = elevation {
+                e1 = Int(truncating: elevation)
+            }
+            group.leave()
         }
-        alert.addAction(alertAction)
-        present(alert, animated: true)
-        {
-            () -> Void in
+        group.enter()
+        geocoder.findElevationSRTM3(latitude: SharedData.shared.lat, longitude: SharedData.shared.long) {
+            elevation in
+            if let elevation = elevation {
+                e2 = Int(truncating: elevation)
+            }
+            group.leave()
+        }
+        group.enter()
+        geocoder.findElevationAstergdem(latitude: SharedData.shared.lat, longitude: SharedData.shared.long) {
+            elevation in
+            if let elevation = elevation {
+                e3 = Int(truncating: elevation)
+            }
+            group.leave()
+        }
+        group.notify(queue: .main) {
+            if e1 > 0 {
+                intArray.append(e1)
+            } else {
+                e1 = 0
+            }
+            if e2 > 0 {
+                intArray.append(e2)
+            } else {
+                e2 = 0
+            }
+            if e3 > 0 {
+                intArray.append(e3)
+            } else {
+                e3 = 0
+            }
+            var count = Double(intArray.count)
+            if count == 0 {
+                count = 1 //edge case
+            }
+            let text = String(Double(e1 + e2 + e3) / Double(count))
+            NotificationCenter.default.post(name: NSNotification.Name("text"), object: text)
+            self.dismiss(animated: true)
         }
     }
     @IBAction func cancelButton(_ sender: Any) {
@@ -47,15 +87,6 @@ class ElevationViewController: UIViewController, WKNavigationDelegate {
                     () -> Void in
                 }
             }
-        } else if webView.isHidden {
-            let alert = UIAlertController(title: "Error", message: "Input cannot be empty!", preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "OK!", style: .default) { (UIAlertAction) -> Void in
-            }
-            alert.addAction(alertAction)
-            present(alert, animated: true)
-            {
-                () -> Void in
-            }
         }
     }
     
@@ -65,81 +96,18 @@ class ElevationViewController: UIViewController, WKNavigationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        if (webView.url?.absoluteString.starts(with: "http://chaitables.com/cgi-bin/") == true) {
-            let url = URL(string:assertCorrectURL(url: webView.url!.absoluteString))!
-            do {
-                let html = try String(contentsOf: url)
-                let subString = html[html.index(of: ", height:")!..<html.index(of: "m</font></p>")!]
-                let elevation = subString.replacingOccurrences(of: ", height:", with: "")
-                NotificationCenter.default.post(name: NSNotification.Name("text"), object: elevation)
-                self.dismiss(animated: true)
-            } catch {
-                print(error)
-            }
-        }
-    }
-    
-    func assertCorrectURL(url: String) -> String {
-        var url = url
-        if (url.contains("&cgi_types=0")) {
-             url = url.replacingOccurrences(of: "&cgi_types=0", with: "&cgi_types=5");
-         } else if (url.contains("&cgi_types=1")) {
-             url = url.replacingOccurrences(of: "&cgi_types=1", with: "&cgi_types=5");
-         } else if (url.contains("&cgi_types=2")) {
-             url = url.replacingOccurrences(of: "&cgi_types=2", with: "&cgi_types=5");
-         } else if (url.contains("&cgi_types=3")) {
-             url = url.replacingOccurrences(of: "&cgi_types=3", with: "&cgi_types=5");
-         } else if (url.contains("&cgi_types=4")) {
-             url = url.replacingOccurrences(of: "&cgi_types=4", with: "&cgi_types=5");
-         } else if (url.contains("&cgi_types=-1")) {
-             url = url.replacingOccurrences(of: "&cgi_types=-1", with: "&cgi_types=5");
-         }
-        return url
-    }
 
     @objc func keyboardWillShow(notification: NSNotification) {
-        if webView.isHidden {
             if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                         if self.view.frame.origin.y == 0 {
                             self.view.frame.origin.y -= keyboardSize.height
                         }
                     }
-        }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        if webView.isHidden {
             if self.view.frame.origin.y != 0 {
                         self.view.frame.origin.y = 0
                     }
-        }
-    }
-}
-
-import Foundation
-
-extension StringProtocol {
-    func index<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> Index? {
-        range(of: string, options: options)?.lowerBound
-    }
-    func endIndex<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> Index? {
-        range(of: string, options: options)?.upperBound
-    }
-    func indices<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Index] {
-        ranges(of: string, options: options).map(\.lowerBound)
-    }
-    func ranges<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Range<Index>] {
-        var result: [Range<Index>] = []
-        var startIndex = self.startIndex
-        while startIndex < endIndex,
-            let range = self[startIndex...]
-                .range(of: string, options: options) {
-                result.append(range)
-                startIndex = range.lowerBound < range.upperBound ? range.upperBound :
-                    index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
-        }
-        return result
     }
 }

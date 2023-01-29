@@ -80,7 +80,20 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
-    var list = ["72 Zmaniyot Minutes", "90 Zmaniyot Minutes", "96 Zmaniyot Minutes", "120 Zmaniyot Minutes", "50 Regular Minutes (NY Only)", "60 Regular Minutes", "72 Regular Minutes", "90 Regular Minutes", "96 Regular Minutes", "120 Regular Minutes", "16.1 degrees", "18 degrees", "19.8 degrees", "26 degrees"]
+    var list = ["72 Zmaniyot Minutes",
+                "90 Zmaniyot Minutes",
+                "96 Zmaniyot Minutes",
+                "120 Zmaniyot Minutes",
+                "50 Regular Minutes (NY Only)",
+                "60 Regular Minutes",
+                "72 Regular Minutes",
+                "90 Regular Minutes",
+                "96 Regular Minutes",
+                "120 Regular Minutes",
+                "16.1 degrees",
+                "18 degrees",
+                "19.8 degrees",
+                "26 degrees"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +102,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         GlobalStruct.useElevation = elevationSwitch.isOn
         GlobalStruct.roundUp = roundUpSwitch.isOn
         elevation = defaults.double(forKey: "elevation")
-        currentElevationLabel.text = "Current: " + String(format: "%.1f", elevation)
+        currentElevationLabel.text = "Current: " + String(format: "%.3f", elevation)
         if #available(iOS 14.0, *) {
                 datePicker.preferredDatePickerStyle = .inline
         }
@@ -97,13 +110,15 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        locationNLabel.text = defaults.string(forKey: "locationName") ?? "Greenwich, England"
+        locationNLabel.text = defaults.string(forKey: "locationName") ?? ""
         if !defaults.bool(forKey: "hasRunBefore") {
             showZipcodeAlert()
         } else {
             if defaults.bool(forKey: "useZipcode") {
                 lat = defaults.double(forKey: "lat")
                 long = defaults.double(forKey: "long")
+                SharedData.shared.lat = lat
+                SharedData.shared.long = long
                 timezone = TimeZone.init(identifier: defaults.string(forKey: "timezone")!)!
                 recreateZmanimCalendar()
                 showZman(row: defaults.integer(forKey: "currentZman"))
@@ -126,6 +141,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             location in DispatchQueue.main.async { [self] in
                 self.lat = location.coordinate.latitude
                 self.long = location.coordinate.longitude
+                SharedData.shared.lat = lat
+                SharedData.shared.long = long
                 self.timezone = TimeZone.current
                 self.recreateZmanimCalendar()
                 setSunsetTime()
@@ -153,13 +170,13 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func showZipcodeAlert() {
-        let alert = UIAlertController(title: "Location or Zipcode?", message: "If you do not want the app to know your location, you can enter a zipcode below. Otherwise, it is recommended to use your devices location as this provides more accurate results.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Location or Search a place?",
+                                      message: "If you do not want the app to know your location, you can search for a place below. Otherwise, it is recommended to use your devices location as this provides more accurate results.", preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = "Zipcode"
+            textField.placeholder = "Zipcode/Address"
         }
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0]
-            print(textField!.text!)
             let geoCoder = CLGeocoder()
             geoCoder.geocodeAddressString((textField?.text)!, completionHandler: { i, j in
                 var name = ""
@@ -176,6 +193,8 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                 let coordinates = i?.first?.location?.coordinate
                 self.lat = coordinates?.latitude ?? 0
                 self.long = coordinates?.longitude ?? 0
+                SharedData.shared.lat = self.lat
+                SharedData.shared.long = self.long
                 self.timezone = (i?.first?.timeZone)!
                 self.recreateZmanimCalendar()
                 self.setSunsetTime()
@@ -207,7 +226,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let amount = notification.object as! String
         elevation = NumberFormatter().number(from: amount)!.doubleValue
         defaults.set(elevation, forKey: "elevation")
-        currentElevationLabel.text = "Current: " + amount
+        currentElevationLabel.text = "Current: " + String(format: "%.3f...", elevation)
         recreateZmanimCalendar()
         showZman(row: currentZman)
         setSunsetTime()
@@ -505,3 +524,11 @@ public extension ComplexZmanimCalendar {
         return temporalHour(fromSunrise: seaLevelSunrise()!, toSunset: seaLevelSunset()!)
     }
 }
+
+class SharedData {
+    static let shared = SharedData()
+    var lat: Double = 0.0
+    var long: Double = 0.0
+    private init() {}
+}
+

@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		085837843DA5E321AD84A407 /* Pods_Rabbeinu_Tam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2220C7242DA8C26345AB9A /* Pods_Rabbeinu_Tam.framework */; };
 		5D00A35E279D14660008A396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D00A35D279D14660008A396 /* AppDelegate.swift */; };
 		5D00A360279D14660008A396 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D00A35F279D14660008A396 /* SceneDelegate.swift */; };
 		5D00A362279D14660008A396 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D00A361279D14660008A396 /* MainViewController.swift */; };
@@ -15,15 +14,32 @@
 		5D00A367279D14670008A396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D00A366279D14670008A396 /* Assets.xcassets */; };
 		5D00A36A279D14670008A396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D00A368279D14670008A396 /* LaunchScreen.storyboard */; };
 		5D00A372279D17120008A396 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D00A371279D17120008A396 /* LocationManager.swift */; };
+		5D3E9AF32980B4CD00BE1DD0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E9AF12980B4CD00BE1DD0 /* Constants.swift */; };
+		5D3E9AF42980B4CD00BE1DD0 /* LSGeoLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E9AF22980B4CD00BE1DD0 /* LSGeoLookup.swift */; };
+		5D66E2402974FF9A00B19CE6 /* OldCodeButMayBeUsableInTheFuture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D66E23F2974FF9A00B19CE6 /* OldCodeButMayBeUsableInTheFuture.swift */; };
 		5DE745B827A750F000C31BEB /* ElevationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE745B727A750F000C31BEB /* ElevationViewController.swift */; };
 		5DE745BB27A78E1500C31BEB /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE745BA27A78E1500C31BEB /* ExternalAccessory.framework */; };
 		5DE745BD27A78E3400C31BEB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE745BC27A78E3400C31BEB /* MapKit.framework */; };
 		5DE745BF27A78E5400C31BEB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE745BE27A78E5400C31BEB /* HomeKit.framework */; };
 		5DE745C127A792D700C31BEB /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE745C027A792D700C31BEB /* NetworkExtension.framework */; };
+		B000C20B9FC0F1D799DC820F /* Pods_Rabbeinu_Tam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAC8089DC97192EC828A5B3 /* Pods_Rabbeinu_Tam.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D3E9ADC29766BE100BE1DD0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0B2220C7242DA8C26345AB9A /* Pods_Rabbeinu_Tam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabbeinu_Tam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		348E149B22A200FC4A029374 /* Pods-Rabbeinu Tam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabbeinu Tam.release.xcconfig"; path = "Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam.release.xcconfig"; sourceTree = "<group>"; };
 		5D00A35A279D14660008A396 /* Rabbeinu Tam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rabbeinu Tam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D00A35D279D14660008A396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D00A35F279D14660008A396 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,14 +50,17 @@
 		5D00A36B279D14670008A396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D00A371279D17120008A396 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		5D00A373279D341A0008A396 /* Rabbeinu Tam-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rabbeinu Tam-Bridging-Header.h"; sourceTree = "<group>"; };
+		5D3E9AF12980B4CD00BE1DD0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5D3E9AF22980B4CD00BE1DD0 /* LSGeoLookup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSGeoLookup.swift; sourceTree = "<group>"; };
+		5D66E23F2974FF9A00B19CE6 /* OldCodeButMayBeUsableInTheFuture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldCodeButMayBeUsableInTheFuture.swift; sourceTree = "<group>"; };
 		5DE745B727A750F000C31BEB /* ElevationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationViewController.swift; sourceTree = "<group>"; };
 		5DE745B927A78E1500C31BEB /* Rabbeinu Tam.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Rabbeinu Tam.entitlements"; sourceTree = "<group>"; };
 		5DE745BA27A78E1500C31BEB /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		5DE745BC27A78E3400C31BEB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5DE745BE27A78E5400C31BEB /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		5DE745C027A792D700C31BEB /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		7962008F2FBB25503CC95027 /* Pods-Rabbeinu Tam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabbeinu Tam.release.xcconfig"; path = "Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam.release.xcconfig"; sourceTree = "<group>"; };
-		D51F570BB862B912CCD345F8 /* Pods-Rabbeinu Tam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabbeinu Tam.debug.xcconfig"; path = "Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam.debug.xcconfig"; sourceTree = "<group>"; };
+		5EAC8089DC97192EC828A5B3 /* Pods_Rabbeinu_Tam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rabbeinu_Tam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A434AA9F2152B295412E73 /* Pods-Rabbeinu Tam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rabbeinu Tam.debug.xcconfig"; path = "Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +72,7 @@
 				5DE745BD27A78E3400C31BEB /* MapKit.framework in Frameworks */,
 				5DE745BF27A78E5400C31BEB /* HomeKit.framework in Frameworks */,
 				5DE745C127A792D700C31BEB /* NetworkExtension.framework in Frameworks */,
-				085837843DA5E321AD84A407 /* Pods_Rabbeinu_Tam.framework in Frameworks */,
+				B000C20B9FC0F1D799DC820F /* Pods_Rabbeinu_Tam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +105,10 @@
 				5D00A35F279D14660008A396 /* SceneDelegate.swift */,
 				5D00A361279D14660008A396 /* MainViewController.swift */,
 				5DE745B727A750F000C31BEB /* ElevationViewController.swift */,
+				5D66E23F2974FF9A00B19CE6 /* OldCodeButMayBeUsableInTheFuture.swift */,
 				5D00A371279D17120008A396 /* LocationManager.swift */,
+				5D3E9AF12980B4CD00BE1DD0 /* Constants.swift */,
+				5D3E9AF22980B4CD00BE1DD0 /* LSGeoLookup.swift */,
 				5D00A363279D14660008A396 /* Main.storyboard */,
 				5D00A366279D14670008A396 /* Assets.xcassets */,
 				5D00A368279D14670008A396 /* LaunchScreen.storyboard */,
@@ -99,8 +121,8 @@
 		7CD0A847833CE6653C4F819E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D51F570BB862B912CCD345F8 /* Pods-Rabbeinu Tam.debug.xcconfig */,
-				7962008F2FBB25503CC95027 /* Pods-Rabbeinu Tam.release.xcconfig */,
+				84A434AA9F2152B295412E73 /* Pods-Rabbeinu Tam.debug.xcconfig */,
+				348E149B22A200FC4A029374 /* Pods-Rabbeinu Tam.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -112,7 +134,7 @@
 				5DE745BE27A78E5400C31BEB /* HomeKit.framework */,
 				5DE745BC27A78E3400C31BEB /* MapKit.framework */,
 				5DE745BA27A78E1500C31BEB /* ExternalAccessory.framework */,
-				0B2220C7242DA8C26345AB9A /* Pods_Rabbeinu_Tam.framework */,
+				5EAC8089DC97192EC828A5B3 /* Pods_Rabbeinu_Tam.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,11 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D00A36E279D14670008A396 /* Build configuration list for PBXNativeTarget "Rabbeinu Tam" */;
 			buildPhases = (
-				31F57006F3E77028294815F7 /* [CP] Check Pods Manifest.lock */,
+				A1B534AB0B96DF56A587B39D /* [CP] Check Pods Manifest.lock */,
 				5D00A356279D14660008A396 /* Sources */,
 				5D00A357279D14660008A396 /* Frameworks */,
 				5D00A358279D14660008A396 /* Resources */,
-				899DA11769824BEAADA20155 /* [CP] Embed Pods Frameworks */,
+				5D3E9ADC29766BE100BE1DD0 /* Embed Frameworks */,
+				48D468E22E4FC8B660F1B101 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,7 +178,7 @@
 				};
 			};
 			buildConfigurationList = 5D00A355279D14660008A396 /* Build configuration list for PBXProject "Rabbeinu Tam" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -186,7 +209,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31F57006F3E77028294815F7 /* [CP] Check Pods Manifest.lock */ = {
+		48D468E22E4FC8B660F1B101 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1B534AB0B96DF56A587B39D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,23 +248,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		899DA11769824BEAADA20155 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rabbeinu Tam/Pods-Rabbeinu Tam-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -232,11 +255,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3E9AF42980B4CD00BE1DD0 /* LSGeoLookup.swift in Sources */,
 				5D00A372279D17120008A396 /* LocationManager.swift in Sources */,
 				5D00A362279D14660008A396 /* MainViewController.swift in Sources */,
 				5DE745B827A750F000C31BEB /* ElevationViewController.swift in Sources */,
 				5D00A35E279D14660008A396 /* AppDelegate.swift in Sources */,
+				5D3E9AF32980B4CD00BE1DD0 /* Constants.swift in Sources */,
 				5D00A360279D14660008A396 /* SceneDelegate.swift in Sources */,
+				5D66E2402974FF9A00B19CE6 /* OldCodeButMayBeUsableInTheFuture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -368,7 +394,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -380,7 +406,7 @@
 		};
 		5D00A36F279D14670008A396 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D51F570BB862B912CCD345F8 /* Pods-Rabbeinu Tam.debug.xcconfig */;
+			baseConfigurationReference = 84A434AA9F2152B295412E73 /* Pods-Rabbeinu Tam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -390,7 +416,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWQ37G559J;
 				INFOPLIST_FILE = "Rabbeinu Tam/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,7 +433,7 @@
 		};
 		5D00A370279D14670008A396 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7962008F2FBB25503CC95027 /* Pods-Rabbeinu Tam.release.xcconfig */;
+			baseConfigurationReference = 348E149B22A200FC4A029374 /* Pods-Rabbeinu Tam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -417,7 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WWQ37G559J;
 				INFOPLIST_FILE = "Rabbeinu Tam/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
