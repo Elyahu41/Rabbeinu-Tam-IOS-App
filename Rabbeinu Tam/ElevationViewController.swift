@@ -11,6 +11,7 @@ class ElevationViewController: UIViewController {
     
     let _acceptableCharacters = "0123456789."
     
+    @IBOutlet weak var getFromOnlineButton: UIButton!
     @IBAction func getFromOnline(_ sender: Any) {
         var intArray: [Int] = []
         var e1:Int = 0
@@ -95,6 +96,9 @@ class ElevationViewController: UIViewController {
         self.textfield.addTarget(self, action: #selector(onReturn), for: UIControl.Event.editingDidEndOnExit)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        if #available(iOS 15.0, *) {
+            getFromOnlineButton.configuration = .filled()
+        }
     }
 
     @objc func keyboardWillShow(notification: NSNotification) {

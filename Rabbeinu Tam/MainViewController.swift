@@ -80,6 +80,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             changeDateButton.setTitle("Change Date", for: .normal)
         }
     }
+    @IBOutlet weak var gearButton: UIButton!
     
     var list = ["72 Zmaniyot Minutes",
                 "90 Zmaniyot Minutes",
@@ -134,6 +135,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             } else {
                 getUserLocation()
             }
+        }
+        if #available(iOS 15.0, *) {
+            changeDateButton.configuration = .filled()
+            gearButton.configuration = .filled()
         }
     }
     
@@ -273,6 +278,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             timeFormatter.dateFormat = "h:mm:ss aa"
         }
         var zman = zmanimCalendar.sunset()
+        if zman == nil {
+            self.sunset.text = "N/A"
+            return
+        }
         if GlobalStruct.roundUp {
             zman = zman?.advanced(by: 60)//seconds
         }
@@ -327,6 +336,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
             }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
+            }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
@@ -334,6 +348,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             zman = zmanimCalendar.tzait90Zmanit()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
+            }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
             }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
@@ -343,6 +362,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
             }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
+            }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
@@ -350,6 +374,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             zman = zmanimCalendar.tzait120Zmanit()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
+            }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
             }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
@@ -359,6 +388,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
             }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
+            }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
@@ -366,6 +400,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             zman = zmanimCalendar.tzait60()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
+            }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
             }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
@@ -375,6 +414,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
             }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
+            }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
@@ -382,6 +426,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             zman = zmanimCalendar.tzait90()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
+            }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
             }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
@@ -391,6 +440,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
             }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
+            }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
@@ -398,6 +452,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             zman = zmanimCalendar.tzait120()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
+            }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
             }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
@@ -407,6 +466,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
             }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
+            }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
@@ -414,6 +478,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             zman = zmanimCalendar.tzais18Degrees()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
+            }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
             }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
@@ -423,6 +492,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
             }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
+            }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
@@ -430,6 +504,11 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             zman = zmanimCalendar.tzais26Degrees()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
+            }
+            if zman == nil {
+                self.time.text = "N/A"
+                self.date.text = dateFormatter.string(from: zmanimCalendar.workingDate)
+                return
             }
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)

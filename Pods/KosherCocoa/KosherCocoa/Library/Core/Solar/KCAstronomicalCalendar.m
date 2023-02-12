@@ -59,7 +59,7 @@
 {
     double sunrise = [self UTCSunrise:kZenithGeometric];
     
-    if (sunrise == NAN)
+    if (isnan(sunrise))
     {
         return nil;
     }
@@ -72,7 +72,7 @@
 {
     double sunrise = [self UTCSeaLevelSunrise:kZenithGeometric];
     
-    if (sunrise == NAN)
+    if (isnan(sunrise))
     {
         return nil;
     }
@@ -99,7 +99,7 @@
 {
     double sunset = [self UTCSunset:kZenithGeometric];
     
-    if (sunset == NAN)
+    if (isnan(sunset))
     {
         return nil;
     }
@@ -111,7 +111,7 @@
 {
     double sunset = [self UTCSeaLevelSunset:kZenithGeometric];
     
-    if (sunset == NAN)
+    if (isnan(sunset))
     {
         return nil;
     }
@@ -159,7 +159,7 @@
 {
     double sunset = [self UTCSunset:offsetZenith];
     
-    if (sunset == NAN)
+    if (isnan(sunset))
     {
         return nil;
     }

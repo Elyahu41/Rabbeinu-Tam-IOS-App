@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait" appearance="dark"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -35,7 +36,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Rabbeinu Tam" id="TX0-9Q-pOA">
-                                        <barButtonItem key="rightBarButtonItem" title="Zipcode" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="50" changesSelectionAsPrimaryAction="YES" id="waE-WB-eq8">
+                                        <barButtonItem key="rightBarButtonItem" title="Zipcode" image="location.circle.fill" catalog="system" width="50" id="waE-WB-eq8">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="enterZipcode:" destination="BYZ-38-t0r" id="NBC-YV-f2f"/>
@@ -75,10 +76,8 @@
                                 <rect key="frame" x="110" y="534" width="194" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Change Date"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Change Date">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="changeDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFF-Od-Lfz"/>
                                 </connections>
@@ -100,7 +99,7 @@
                                     </switch>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" layoutMarginsFollowReadableWidth="YES" text="LocationName" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yaw-4Q-83a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="LocationName" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yaw-4Q-83a">
                                 <rect key="frame" x="31" y="213" width="353" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -109,41 +108,36 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <stackView opaque="NO" contentMode="center" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="KcA-Sb-AxL">
-                                <rect key="frame" x="51.333333333333343" y="604" width="311.66666666666663" height="34.333333333333371"/>
+                                <rect key="frame" x="62.666666666666657" y="604" width="288.66666666666674" height="31.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elevation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cK-ff-25n">
-                                        <rect key="frame" x="0.0" y="1.666666666666627" width="107.66666666666667" height="31.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107.66666666666667" height="31.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="elevation" translatesAutoresizingMaskIntoConstraints="NO" id="fcm-bT-PVm">
-                                        <rect key="frame" x="116.66666666666666" y="1.6666666666666288" width="51" height="31"/>
+                                        <rect key="frame" x="116.66666666666669" y="0.33333333333337123" width="51" height="31"/>
                                         <connections>
                                             <action selector="elevationSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="c7g-o3-Qn7"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FD6-s7-jnK">
-                                        <rect key="frame" x="174.66666666666666" y="6.9999999999999982" width="77" height="20.333333333333329"/>
+                                        <rect key="frame" x="174.66666666666669" y="5.6666666666666288" width="77" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0O-eo-F3j">
-                                        <rect key="frame" x="260.66666666666669" y="0.0" width="51" height="34.333333333333336"/>
+                                        <rect key="frame" x="260.66666666666663" y="1.6666666666666288" width="28" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                            <imageReference key="image" image="gear" catalog="system" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
-                                        <buttonConfiguration key="configuration" style="tinted">
-                                            <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
-                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
-                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="setupElevetion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aTc-c5-wKL"/>
                                         </connections>
@@ -151,7 +145,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXJ-4x-CHV">
-                                <rect key="frame" x="178.33333333333334" y="639.33333333333337" width="57.666666666666657" height="20.333333333333371"/>
+                                <rect key="frame" x="178.33333333333334" y="636.33333333333337" width="57.666666666666657" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -192,6 +186,7 @@
                         <outlet property="date" destination="w29-gb-D4f" id="DRE-VN-V4Y"/>
                         <outlet property="datePicker" destination="S1x-vw-nwW" id="ahc-wz-NrT"/>
                         <outlet property="elevationSwitch" destination="fcm-bT-PVm" id="doy-Eq-dfV"/>
+                        <outlet property="gearButton" destination="f0O-eo-F3j" id="pu7-qq-8tK"/>
                         <outlet property="locationNLabel" destination="yaw-4Q-83a" id="8B3-fv-gb1"/>
                         <outlet property="opinions" destination="mX6-uz-NWd" id="vY3-Yz-9QO"/>
                         <outlet property="roundUpSwitch" destination="zPj-Zg-b7J" id="Blz-vT-cja"/>
@@ -222,10 +217,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="AKu-dH-JJv">
-                                <rect key="frame" x="16.333333333333343" y="519" width="381.33333333333326" height="38"/>
+                                <rect key="frame" x="28.333333333333343" y="521" width="357.33333333333326" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter elevation in meters" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mrn-Y7-vrS">
-                                        <rect key="frame" x="0.0" y="0.0" width="168.33333333333334" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="168.33333333333334" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartQuotesType="no"/>
                                         <connections>
@@ -233,19 +228,16 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZF-tc-npw" userLabel="OR">
-                                        <rect key="frame" x="173.33333333333331" y="0.0" width="41" height="38"/>
+                                        <rect key="frame" x="173.33333333333331" y="0.0" width="41" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BA-F8-mmd">
-                                        <rect key="frame" x="219.33333333333331" y="0.0" width="162" height="38"/>
+                                        <rect key="frame" x="219.33333333333331" y="0.0" width="138" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Get from Online"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Get from Online">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="getFromOnline:" destination="931-K3-aVp" eventType="touchUpInside" id="8Vc-1n-hzp"/>
                                         </connections>
@@ -253,7 +245,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="22" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="eBb-IE-OuT">
-                                <rect key="frame" x="20" y="263.66666666666669" width="374" height="142.33333333333331"/>
+                                <rect key="frame" x="20" y="265.66666666666669" width="374" height="142.33333333333331"/>
                                 <string key="text">Some opinions hold that the actual sunset that should be used for calculating zmanim is when sunset is seen at the highest point in the city. However, some do not hold of this opinion. Therefore, I left this part up to the user. Note that elevation does NOT affect degree based zmanim.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -273,6 +265,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="getFromOnlineButton" destination="9BA-F8-mmd" id="SB4-Ep-cOU"/>
                         <outlet property="textfield" destination="mrn-Y7-vrS" id="oRX-05-kBz"/>
                     </connections>
                 </viewController>
@@ -282,8 +275,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="128" height="92"/>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.12399999797344208" green="0.27399998903274536" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
