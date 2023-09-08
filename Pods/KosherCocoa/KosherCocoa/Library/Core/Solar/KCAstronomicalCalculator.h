@@ -16,7 +16,7 @@
 NS_SWIFT_NAME(AstronomicalCalculator)
 @interface KCAstronomicalCalculator : NSObject
 
-- (id _Nullable )init;
+- (id _Nullable)init;
 
 // MARK: - Calculating Sunrise
 

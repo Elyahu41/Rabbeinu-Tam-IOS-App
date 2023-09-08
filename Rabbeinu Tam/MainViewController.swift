@@ -82,10 +82,10 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     @IBOutlet weak var gearButton: UIButton!
     
-    var list = ["72 Zmaniyot Minutes",
-                "90 Zmaniyot Minutes",
-                "96 Zmaniyot Minutes",
-                "120 Zmaniyot Minutes",
+    var list = ["72 Seasonal Minutes",
+                "90 Seasonal Minutes",
+                "96 Seasonal Minutes",
+                "120 Seasonal Minutes",
                 "50 Regular Minutes (NY Only)",
                 "60 Regular Minutes",
                 "72 Regular Minutes",
@@ -331,7 +331,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM y"
         var zman: Date? = nil
-        if list[row] == "72 Zmaniyot Minutes" {
+        if list[row] == "72 Seasonal Minutes" {
             zman = zmanimCalendar.tzait72Zmanit()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
@@ -344,7 +344,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
-        if list[row] == "90 Zmaniyot Minutes" {
+        if list[row] == "90 Seasonal Minutes" {
             zman = zmanimCalendar.tzait90Zmanit()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
@@ -357,7 +357,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
-        if list[row] == "96 Zmaniyot Minutes" {
+        if list[row] == "96 Seasonal Minutes" {
             zman = zmanimCalendar.tzait96Zmanit()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
@@ -370,7 +370,7 @@ class MainViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             self.time.text = timeFormatter.string(from: zman!)
             self.date.text = dateFormatter.string(from: zman!)
         }
-        if list[row] == "120 Zmaniyot Minutes" {
+        if list[row] == "120 Seasonal Minutes" {
             zman = zmanimCalendar.tzait120Zmanit()
             if GlobalStruct.roundUp {
                 zman = zman?.advanced(by: 60)
